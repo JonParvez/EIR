@@ -22,10 +22,6 @@ namespace EIR_API.Controllers
         [HttpGet("/CheckMSISDN", Name = "CheckMSISDN")]
         public async Task<IActionResult> CheckMSISDN(string IMEI, string IMSI)
         {
-            CommunicationService com = new CommunicationService();
-            var blacklist = await com.CallAPI("http://sff.com", new object());
-            blacklist.
-
             var isValidated = await _subscriberService.CheckMSISDN(IMEI, IMSI);
             return Ok(isValidated);
         }
