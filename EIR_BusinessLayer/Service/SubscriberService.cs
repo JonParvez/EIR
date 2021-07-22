@@ -28,5 +28,7 @@ namespace EIR_BusinessLayer.Service
             dynamic requestObj = new object();
             return communicationService.GetRequest<dynamic>("http://sdf.com");
         }
+
+        
     }
 }

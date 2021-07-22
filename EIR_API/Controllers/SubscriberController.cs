@@ -25,5 +25,11 @@ namespace EIR_API.Controllers
             var isValidated = await _subscriberService.CheckMSISDN(IMEI, IMSI);
             return Ok(isValidated);
         }
+        [HttpGet("/CheckMSISDNbyObj", Name = "CheckMSISDNbyObj")]
+        public async Task<IActionResult> CheckMSISDNbyObj(EIR_DomainModels.Black_List black)
+        {
+            var isValidated = await _subscriberService.CheckMSISDN("", "");
+            return Ok(isValidated);
+        }
     }
 }
